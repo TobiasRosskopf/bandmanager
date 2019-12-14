@@ -1,0 +1,23 @@
+{% extends "manager/base.html" %}
+
+{% block content %}
+    {% if song_list %}
+        <ul id="sortable1" class="connectedSortable">
+        {% for song in song_list %}
+            <li>{{ song }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No songs are available.</p>
+    {% endif %}
+
+    {% if song_list %}
+        <ul id="sortable2" class="connectedSortable">
+        {% for song in song_list %}
+            <li>{{ song }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No songs are available.</p>
+    {% endif %}
+{% endblock %}
