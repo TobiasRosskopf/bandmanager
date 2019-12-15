@@ -1,18 +1,50 @@
-#sortable1, #sortable2 {
-    border: 1px solid #eee;
-    /* width: 142px; */
-    min-height: 20px;
-    list-style-type: none;
+* {
     margin: 0;
-    padding: 5px 0 0 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 5% 10% 0% 10%;
+}
+
+h1, h2 {
+    color: #0C3F65;
+}
+
+#sortable1, #sortable2 {
+    width: 45%;
+    min-height: 200px;
+    list-style-type: none;
+    margin: 2.5%;
+    padding: 0;
     float: left;
-    margin-right: 10px;
+    border: 2px solid #0C3F65;
+    border-radius: 15px;
+    background-color: lightgray;
 }
 
 #sortable1 li, #sortable2 li {
-    margin: 0 5px 5px 5px;
-    border: 1px solid #eee;
-    padding: 5px;
-    font-size: 1.2em;
-    /* width: 120px; */
+    border: 1.5px solid black;
+    border-radius: 15px;
+    margin: 25px;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#sortable1 li {
+    background-color: rgb(100, 237, 107);
+}
+
+#sortable2 li {
+    background-color: rgb(250, 133, 133);
 }

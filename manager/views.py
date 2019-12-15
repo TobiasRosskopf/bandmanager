@@ -6,9 +6,13 @@ from .models import Song
 
 
 def songs(request):
-    song_list = Song.objects.order_by('name')
+    songs_active = Song.objects.filter(active=True)
+    songs_not_active = Song.objects.filter(active=False)
+
     template = loader.get_template('manager/songs.html')
     context = {
-        'song_list': song_list,
+        'songs_active': songs_active,
+        'songs_not_active': songs_not_active,
     }
+    
     return HttpResponse(template.render(context, request))
