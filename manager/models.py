@@ -25,3 +25,19 @@ class Song(models.Model):
 
         # return '{:02d}:{:02d}'.format(minutes, seconds)
         return self.duration
+        
+        
+class Gig(models.Model):
+    date = models.DateField()
+    location = models.CharField(max_length=200)
+    setlist = models.ForeignKey(Setlist)
+    
+    def __str__(self):
+        return f"{self.date} - {self.location}"
+        
+        
+class Setlist(models.Model):
+    songs = models.ManyToManyField(Song)
+    
+    def __str__(self):
+        return len(self.songs)
