@@ -1,7 +1,6 @@
 from datetime import timedelta
 
 from django.db import models
-from django.utils.dateparse import parse_duration
 
 
 class Song(models.Model):
@@ -17,19 +16,17 @@ class Song(models.Model):
         return f"{self.name} ({self.interpret})"
 
     def duration_mmss(self):
-        # duration = parse_duration(self.duration)
-
-        # seconds = duration.seconds
-
-        # minutes = seconds // 60
-        # seconds = seconds % 60
-
-        # minutes = minutes % 60
-
-        # return '{:02d}:{:02d}'.format(minutes, seconds)
+        # TODO: Convert to mm:ss
         return self.duration
-        
-        
+
+
+class Setlist(models.Model):
+    songs = models.ManyToManyField(Song)
+
+    def __str__(self):
+        return len(self.songs)
+
+
 class Gig(models.Model):
     date = models.DateField()
     location = models.CharField(max_length=200)
@@ -38,12 +35,6 @@ class Gig(models.Model):
     class Meta:
         ordering = ['date']
     
+
     def __str__(self):
         return f"{self.date} - {self.location}"
-        
-        
-class Setlist(models.Model):
-    songs = models.ManyToManyField(Song)
-    
-    def __str__(self):
-        return len(self.songs)
