@@ -1,15 +1,20 @@
 {% extends "manager/base.html" %}
 
 {% block content %}
-    <ul id="sortable1" class="connectedSortable">
-    {% for song in songs_active %}
-        <li>{{ song }} - {{ song.duration_mmss }}</li>
-    {% endfor %}
-    </ul>
-
-    <ul id="sortable2" class="connectedSortable">
-    {% for song in songs_not_active %}
-        <li>{{ song }} - {{ song.duration_mmss }}</li>
-    {% endfor %}
-    </ul>
+<div class="row">
+    <div class="col-md-6">
+        <ul id="sortable1" class="connectedSortable">
+        {% for song in songs_active %}
+            <li>{{ song }} - {{ song.duration_mmss }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <ul id="sortable2" class="connectedSortable">
+        {% for song in songs_not_active %}
+            <li>{{ song }} - {{ song.duration_mmss }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
 {% endblock %}

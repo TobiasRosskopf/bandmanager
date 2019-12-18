@@ -19,6 +19,11 @@
         <script src="{% static 'manager/script.js' %}"></script>
     </head>
     <body>
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">Start</a></li>
+            <li role="presentation"><a href="#">Profil</a></li>
+            <li role="presentation"><a href="#">Nachrichten</a></li>
+        </ul>
         {% block content %}
         {% endblock %}
     </body>
