@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#sortable1, #sortable2").sortable({
+    $("#activeSongs, #passivSongs").sortable({
         connectWith: ".connectedSortable"
     }).disableSelection();
 });

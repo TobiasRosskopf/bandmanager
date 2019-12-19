@@ -1,4 +1,6 @@
 from datetime import timedelta
+from datetime import time
+from datetime import date
 
 from django.db import models
 
@@ -20,21 +22,15 @@ class Song(models.Model):
         return self.duration
 
 
-class Setlist(models.Model):
-    songs = models.ManyToManyField(Song)
-
-    def __str__(self):
-        return len(self.songs)
-
-
 class Gig(models.Model):
     date = models.DateField()
+    time = models.TimeField(default=time(0))
     location = models.CharField(max_length=200)
-    setlist = models.ForeignKey(Setlist)
+    songs = models.ManyToManyField(Song)
     
     class Meta:
-        ordering = ['date']
+        ordering = ['date', 'time']
     
-
     def __str__(self):
-        return f"{self.date} - {self.location}"
+        date_str = date.strftime(self.date, "%d.%m.%Y")
+        return f"{date_str} - {self.location}"

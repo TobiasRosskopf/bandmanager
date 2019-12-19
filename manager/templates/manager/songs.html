@@ -1,17 +1,23 @@
 {% extends "manager/base.html" %}
 
 {% block content %}
+<h2>Setlist Generator</h2>
+<br>
 <div class="row">
     <div class="col-md-6">
-        <ul id="sortable1" class="connectedSortable">
+        <h3>Aktuelle Setlist:</h3>
+        <br>
+        <ol id="activeSongs" class="connectedSortable">
         {% for song in songs_active %}
             <li>{{ song }} - {{ song.duration_mmss }}</li>
         {% endfor %}
-        </ul>
+        </ol>
     </div>
     <div class="col-md-6">
-        <ul id="sortable2" class="connectedSortable">
-        {% for song in songs_not_active %}
+        <h3>Weitere Songs im Repertoire:</h3>
+        <br>
+        <ul id="passivSongs" class="connectedSortable">
+        {% for song in songs_passiv %}
             <li>{{ song }} - {{ song.duration_mmss }}</li>
         {% endfor %}
         </ul>

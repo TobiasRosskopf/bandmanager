@@ -7,31 +7,39 @@
 	vertical-align: baseline;
 }
 
-html {
-    height: 100%;
-}
-
-body {
-    margin: 5% 10% 0% 10%;
-}
-
-h1, h2 {
+h1, h2, h3 {
     color: #0C3F65;
 }
 
-#sortable1, #sortable2 {
+header {
+    padding: 2.5%;
+    background-color: rgb(170, 207, 207);
+    /* height: 20%; */
+}
+
+main {
+    padding: 5% 10% 5% 10%;
+    background-color: rgb(170, 207, 207);
+}
+
+/* footer {
+    padding: 2.5%;
+    background-color: rgb(95, 158, 160);
+} */
+
+#activeSongs, #passivSongs {
     width: 100%;
     min-height: 200px;
-    list-style-type: none;
-    /* margin: 2.5%; */
-    padding: 0;
-    /* float: left; */
     border: 2px solid #0C3F65;
     border-radius: 15px;
     background-color: lightgray;
 }
 
-#sortable1 li, #sortable2 li {
+#passivSongs {
+    list-style-type: none;
+}
+
+#activeSongs li, #passivSongs li {
     border: 1.5px solid black;
     border-radius: 15px;
     margin: 25px;
@@ -41,10 +49,10 @@ h1, h2 {
     text-align: center;
 }
 
-#sortable1 li {
+#activeSongs li {
     background-color: rgb(100, 237, 107);
 }
 
-#sortable2 li {
+#passivSongs li {
     background-color: rgb(250, 133, 133);
 }
