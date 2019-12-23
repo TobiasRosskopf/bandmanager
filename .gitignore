@@ -110,3 +110,6 @@ venv.bak/
 # VS Code & PyCharm
 .vscode/
 .idea/
+
+# Project spezified
+roggn_venv/
