@@ -17,6 +17,10 @@ header {
     /* height: 20%; */
 }
 
+header #logo {
+    height: 10vh;
+}
+
 main {
     padding: 5% 10% 5% 10%;
     background-color: rgb(170, 207, 207);
