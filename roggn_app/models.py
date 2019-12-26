@@ -6,14 +6,26 @@ from datetime import datetime
 from django.db import models
 
 
+class Band(models.Model):
+    name = models.CharField(max_length=200)
+    members = "" # TODO
+    songs = Foreignkey(Song)
+    gigs = Foreignkey(Gig)
+    
+    class Meta:
+        ordering = ['name',]
+        
+    def __str__(self):
+        return self.name
+
 class Song(models.Model):
-    name = models.CharField(max_length=200, default="")
+    name = models.CharField(max_length=200)
     interpret = models.CharField(max_length=200, default="")
     duration = models.DurationField(default=timedelta(minutes=0))
     active = models.BooleanField(default=True)
     
     class Meta:
-        ordering = ['name', 'interpret']
+        ordering = ['name', 'interpret',]
 
     def __str__(self):
         return f"{self.name} ({self.interpret})"
@@ -31,7 +43,7 @@ class Gig(models.Model):
     songs = models.ManyToManyField(Song)
     
     class Meta:
-        ordering = ['date', 'time']
+        ordering = ['-date', '-time',]
     
     def __str__(self):
         date_str = date.strftime(self.date, "%d.%m.%Y")
