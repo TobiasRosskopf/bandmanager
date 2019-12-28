@@ -1,8 +1,13 @@
-from django.urls import path
+from django.urls import path, include
 
 from . import views
+from .api import GigResource
+
+
+gig_resource = GigResource()
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('songs', views.songs, name='songs'),
+    path(r'', views.index, name='index'),
+    path(r'^songs/', views.songs, name='songs'),
+    path(r'^api/', include(gig_resource.urls)),
 ]
