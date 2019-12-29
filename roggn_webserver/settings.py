@@ -28,6 +28,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere']
 
 INSTALLED_APPS = [
     'roggn_app',
+    'tastypie',
     'django_secrets',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -117,5 +118,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)

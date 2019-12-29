@@ -8,28 +8,30 @@
 }
 
 h1, h2, h3 {
-    color: #0C3F65;
+    color: rgb(128, 0, 0);
 }
 
 header {
-    padding: 2.5%;
-    background-color: rgb(170, 207, 207);
-    /* height: 20%; */
+    padding: 1%;
+    background-color: rgb(255, 204, 1);
 }
 
 header #logo {
     height: 10vh;
 }
 
-main {
-    padding: 5% 10% 5% 10%;
-    background-color: rgb(170, 207, 207);
+nav {
+    background-color: rgb(128, 0, 0);
 }
 
-/* footer {
-    padding: 2.5%;
-    background-color: rgb(95, 158, 160);
-} */
+main {
+    padding: 5% 10% 5% 10%;
+    background-color: rgb(255, 204, 1);
+}
+
+footer {
+    background-color: rgb(128, 0, 0);
+}
 
 #activeSongs, #passivSongs {
     width: 100%;

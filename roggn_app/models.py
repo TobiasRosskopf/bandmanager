@@ -8,21 +8,19 @@ from django.db import models
 
 class Band(models.Model):
     name = models.CharField(max_length=200)
-    members = "" # TODO
-    songs = Foreignkey(Song)
-    gigs = Foreignkey(Gig)
-    
     class Meta:
         ordering = ['name',]
         
     def __str__(self):
         return self.name
 
+
 class Song(models.Model):
     name = models.CharField(max_length=200)
     interpret = models.CharField(max_length=200, default="")
     duration = models.DurationField(default=timedelta(minutes=0))
     active = models.BooleanField(default=True)
+    band = models.ForeignKey(Band, on_delete=models.CASCADE, null=True)
     
     class Meta:
         ordering = ['name', 'interpret',]
@@ -36,11 +34,12 @@ class Song(models.Model):
 
 
 class Gig(models.Model):
-    date = models.DateField(default=date(2000, 1, 1))
-    time = models.TimeField(default=time(0))
-    event = models.CharField(max_length=200, default="")
+    date = models.DateField(default=date(2000, 1, 1), null=True)
+    time = models.TimeField(default=time(0), null=True)
+    event = models.CharField(max_length=200, default="", null=True)
     location = models.CharField(max_length=200, default="")
     songs = models.ManyToManyField(Song)
+    band = models.ForeignKey(Band, on_delete=models.CASCADE, null=True)
     
     class Meta:
         ordering = ['-date', '-time',]

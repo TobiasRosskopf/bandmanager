@@ -24,3 +24,10 @@ def songs(request):
     }
     
     return HttpResponse(template.render(context, request))
+
+
+def gigs(request):
+    template = loader.get_template('roggn_app/gigs.html')
+    context = {}
+    
+    return HttpResponse(template.render(context, request))

@@ -1,13 +1,16 @@
 from django.urls import path, include
+from tastypie.api import Api
 
 from . import views
-from .api import GigResource
+from .api import GigResource, SongResource
 
-
-gig_resource = GigResource()
+v1_api = Api(api_name='v1')
+v1_api.register(GigResource())
+v1_api.register(SongResource())
 
 urlpatterns = [
-    path(r'', views.index, name='index'),
-    path(r'^songs/', views.songs, name='songs'),
-    path(r'^api/', include(gig_resource.urls)),
+    path('', views.index, name='index'),
+    path('songs/', views.songs, name='songs'),
+    path('gigs/', views.gigs, name='gigs'),
+    path('api/', include(v1_api.urls)),
 ]
