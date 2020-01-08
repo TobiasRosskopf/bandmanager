@@ -1,64 +1,72 @@
 * {
-    margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 h1, h2, h3 {
-    color: rgb(128, 0, 0);
+  color: maroon;
 }
 
 header {
-    padding: 1%;
-    background-color: rgb(255, 204, 1);
+  padding: 1%;
+  background-color: #ffcc01;
 }
-
 header #logo {
-    height: 10vh;
+  height: 10vh;
 }
 
 nav {
-    background-color: rgb(128, 0, 0);
+  background-color: maroon;
 }
 
 main {
-    padding: 5% 10% 5% 10%;
-    background-color: rgb(255, 204, 1);
+  padding: 5% 10% 5% 10%;
+  background-color: #ffcc01;
 }
 
 footer {
-    background-color: rgb(128, 0, 0);
+  background-color: maroon;
 }
 
-#activeSongs, #passivSongs {
-    width: 100%;
-    min-height: 200px;
-    border: 2px solid #0C3F65;
-    border-radius: 15px;
-    background-color: lightgray;
+#activeSongs {
+  width: 100%;
+  min-height: 200px;
+  border: 2px solid #0C3F65;
+  border-radius: 15px;
+  background-color: lightgray;
+}
+#activeSongs li {
+  border: 1.5px solid black;
+  border-radius: 15px;
+  margin: 25px;
+  padding: 15px;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-align: center;
+  background-color: #64ed6b;
 }
 
 #passivSongs {
-    list-style-type: none;
+  width: 100%;
+  min-height: 200px;
+  border: 2px solid #0C3F65;
+  border-radius: 15px;
+  background-color: lightgray;
+  list-style-type: none;
 }
-
-#activeSongs li, #passivSongs li {
-    border: 1.5px solid black;
-    border-radius: 15px;
-    margin: 25px;
-    padding: 15px;
-    font-size: 0.8em;
-    font-weight: bold;
-    text-align: center;
-}
-
-#activeSongs li {
-    background-color: rgb(100, 237, 107);
-}
-
 #passivSongs li {
-    background-color: rgb(250, 133, 133);
+  border: 1.5px solid black;
+  border-radius: 15px;
+  margin: 25px;
+  padding: 15px;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-align: center;
+  background-color: #fa8585;
 }
+
+/*# sourceMappingURL=style.css.map */
