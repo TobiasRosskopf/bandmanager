@@ -2,8 +2,8 @@ import unittest
 from django.test import TestCase
 
 # Import models
-from .models import Song
-from .models import Gig
+from roggn_app.models import Song
+from roggn_app.models import Gig
 
 
 # Tests for Song model

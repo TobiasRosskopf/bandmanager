@@ -4,7 +4,7 @@ from tastypie.test import ResourceTestCaseMixin
 from tastypie.models import ApiKey
 
 # Import models
-from .models import Song
+from roggn_app.models import Song
 
 
 """
