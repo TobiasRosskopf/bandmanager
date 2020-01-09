@@ -1,0 +1,20 @@
+[
+    {
+        "model": "roggn_app.band",
+        "pk": 1,
+        "fields": {
+            "name": "The Pins"
+        }
+    },
+    {
+        "model": "roggn_app.song",
+        "pk": 1,
+        "fields": {
+            "name": "Highway to Hell",
+            "interpret": "AC/DC",
+            "duration": "00:03:33",
+            "active": true,
+            "band": 1
+        }
+    }
+]

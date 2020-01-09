@@ -4,6 +4,12 @@ from datetime import date
 from datetime import datetime
 
 from django.db import models
+from django.contrib.auth.models import User    
+from tastypie.models import create_api_key 
+
+
+# Signal for generating API-Key when new User is created
+models.signals.post_save.connect(create_api_key, sender=User)
 
 
 class Band(models.Model):
