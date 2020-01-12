@@ -3,7 +3,8 @@ from django.template import loader
 from django.shortcuts import render
 
 # Import models
-from .models import Song
+from .models.models import Song
+from .models.models import Gig
 
 
 def index(request):
@@ -27,7 +28,10 @@ def songs(request):
 
 
 def gigs(request):
+    # TODO: Get objects!
     template = loader.get_template('roggn_app/gigs.html')
-    context = {}
+    context = {
+        #TODO: Place content!
+    }
     
     return HttpResponse(template.render(context, request))

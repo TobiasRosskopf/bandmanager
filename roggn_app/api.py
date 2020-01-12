@@ -2,7 +2,8 @@ from tastypie.resources import ModelResource, ALL
 from tastypie.authentication import ApiKeyAuthentication
 from tastypie.serializers import Serializer
 
-from .models import Gig, Song
+from .models.models import Song
+from .models.models import Gig
 
 
 class GigResource(ModelResource):
@@ -14,7 +15,7 @@ class GigResource(ModelResource):
         allowed_methods = ['get']
         authentication = ApiKeyAuthentication()
         serializer = Serializer(formats=['json', 'xml'])
-        # http://127.0.0.1:8000/api/v1/gigs/?username=tobias.rosskopf&api_key=sdsdfsdfsdfsdfsdfs
+        # http://127.0.0.1:8000/api/v1/gigs/?username=tobias.rosskopf&api_key=sdsdfsdfsdfsdfsdfs&format=json
 
 
 class SongResource(ModelResource):
@@ -29,4 +30,4 @@ class SongResource(ModelResource):
         }
         authentication = ApiKeyAuthentication()
         serializer = Serializer(formats=['json', 'xml'])
-        # http://127.0.0.1:8000/api/v1/songs/?username=tobias.rosskopf&api_key=sdsdfsdfsdfsdfsdfs
+        # http://127.0.0.1:8000/api/v1/songs/?username=tobias.rosskopf&api_key=sdsdfsdfsdfsdfsdfs&format=json
