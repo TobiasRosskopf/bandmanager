@@ -1,5 +1,7 @@
-from tastypie.resources import ModelResource, ALL
+from tastypie.resources import ModelResource
+from tastypie.constants import ALL, ALL_WITH_RELATIONS
 from tastypie.authentication import ApiKeyAuthentication
+from tastypie.authorization import Authorization
 from tastypie.serializers import Serializer
 
 from .models.models import Song
@@ -26,8 +28,14 @@ class SongResource(ModelResource):
         fields = ['name', 'interpret', 'duration', 'active']
         allowed_methods = ['get']
         filtering = {
-            'interpret': ALL,
+            'active': ALL,
         }
         authentication = ApiKeyAuthentication()
+        authorization = Authorization()
         serializer = Serializer(formats=['json', 'xml'])
-        # http://127.0.0.1:8000/api/v1/songs/?username=tobias.rosskopf&api_key=sdsdfsdfsdfsdfsdfs&format=json
+
+    def authorized_read_list(self, object_list, bundle):
+        return object_list.filter(user=bundle.request.user)
+        
+        # http://127.0.0.1:8000/api/v1/songs/?username=tobias.rosskopf&api_key=sdsdfsdfsdfsdfsdfs&format=json&active=True
+        # http://127.0.0.1:8000/api/v1/songs/?username=test_user_01&api_key=84f93bf313ef5112218a45e74ba0c14079541e38
